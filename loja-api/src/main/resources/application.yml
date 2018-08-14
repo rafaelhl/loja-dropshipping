@@ -1,0 +1,24 @@
+spring.application.name: loja-api
+app:
+  jwtSecret: r4f43lhl
+  jwtExpirationInMs: 604800000
+  loja-message-rest:
+    url: http://localhost:8081/loja-message-rest
+
+server:
+  servlet:
+    context-path: /loja-api
+
+spring.jpa.hibernate.ddl-auto: update
+
+opentracing.jaeger:
+  enabled: true
+  log-spans: true
+
+## Jackson Properties
+spring.jackson:
+  serialization.WRITE_DATES_AS_TIMESTAMPS: false
+  time-zone: UTC
+
+logging:
+  level.root: WARN

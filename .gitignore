@@ -1,0 +1,61 @@
+### Java ###
+# Compiled class file
+*.class
+# Log file
+*.log
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+### Maven ###
+.mvn/
+target/
+target-deploy/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+dependency-reduced-pom.xml
+buildNumber.properties
+release.properties
+### XRebel/JRebel ###
+**/rebel.xml
+### Eclipse ###
+.metadata
+.project
+.classpath
+.settings/
+*.tmp
+*.bak
+*.swp
+bin/
+tmp/
+### Intellij ###
+.idea/
+*.iws
+*.iml
+*.ipr
+modules.xml
+out/
+### NetBeans ###
+nbproject/
+build/
+nbbuild/
+dist/
+nbdist/
+### VSCODE ###
+.vscode/
+### BEYONDCOMPARE ###
+*.orig
+### ERICHTOOL ###
+.erichtool/
+### GRADLE ###
+.gradle
+.gradletasknamecache
+gradle-app.setting
+!gradle-wrapper.jar
+gradle/
+gradlew*

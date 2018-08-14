@@ -1,0 +1,21 @@
+spring.application.name: loja-message-rest
+opentracing.jaeger:
+  enabled: true
+  log-spans: true
+
+app:
+  loja-api:
+    url: http://localhost:8080/loja-api
+  notification-platform:
+    notification-channel-config:
+      url: http://localhost:8284
+
+server:
+  servlet:
+    context-path: /${spring.application.name}
+  port: 8081
+
+## Jackson Properties
+spring.jackson:
+  serialization.WRITE_DATES_AS_TIMESTAMPS: false
+  time-zone: UTC

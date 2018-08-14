@@ -1,0 +1,38 @@
+Configuration:
+  Properties:
+    Property:
+      - name: log-path
+        value: /var/log/loja-message-rest
+      - name: log-file
+        value: ${log-path}/loja-message-rest.log
+      - name: log-pattern
+        value: "%d{yyyy-MM-dd HH:mm:ss.SSS} %5p --- [%15.15t{14}] %-40.40logger{1.} : %m%n"
+  Appenders:
+    Console:
+      name: console
+      PatternLayout:
+        Pattern: ${log-pattern}
+    RollingFile:
+      - name: application
+        fileName: ${log-file}
+        filePattern: ${log-path}/loja-message-rest-%d{yyyy-MM-dd}.%i.log.zip
+        PatternLayout:
+          Pattern: ${log-pattern}
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 10 MB
+        DefaultRollOverStrategy:
+          max: 15
+  Loggers:
+    Root:
+      level: info
+      AppenderRef:
+        - ref: console
+        - ref: application
+    logger:
+      - name: br.com.softplan.unj.notification.platform
+        level: info
+      - name: org.springframework.web.servlet.DispatcherServlet
+        level: off
+      - name: org.apache.catalina.core.ContainerBase
+        level: off

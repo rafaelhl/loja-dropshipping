@@ -1,0 +1,21 @@
+spring.application.name: fornecedor-loja
+opentracing.jaeger:
+  enabled: true
+  log-spans: true
+
+app:
+  loja-message-rest:
+    url: http://127.0.0.1:8081/loja-message-rest
+
+server:
+  servlet:
+    context-path: /${spring.application.name}
+  port: 9090
+
+## Jackson Properties
+spring.jackson:
+  serialization.WRITE_DATES_AS_TIMESTAMPS: false
+  time-zone: UTC
+
+logging:
+  level.root: WARN
